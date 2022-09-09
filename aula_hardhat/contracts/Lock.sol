@@ -5,20 +5,10 @@ pragma solidity ^0.8.9;
 import "hardhat/console.sol";
 
 contract Lock {
-    uint public unlockTime;
+    uint public unlockTime = 30000;
     address payable public owner;
 
     event Withdrawal(uint amount, uint when);
-
-    constructor(uint _unlockTime) {
-        require(
-            block.timestamp < _unlockTime,
-            "Unlock time should be in the future"
-        );
-
-        unlockTime = _unlockTime;
-        owner = payable(msg.sender);
-    }
 
     function withdraw() public {
         // Uncomment this line to print a log in your terminal

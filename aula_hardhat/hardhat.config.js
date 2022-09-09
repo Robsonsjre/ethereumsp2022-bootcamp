@@ -32,12 +32,19 @@ module.exports = {
       },
       url: 'https://kovan.infura.io/v3/' + process.env.INFURA_PROJECT_ID,
       network_id: 42
+    },
+    goerli: {
+      accounts: {
+        mnemonic: process.env.DEV_MNEMONIC
+      },
+      url: 'https://goerli.infura.io/v3/' + process.env.INFURA_PROJECT_ID,
     }
   },
   etherscan: {
     apiKey: {
       mainnet: process.env.ETHERSCAN_APIKEY,
-      kovan: process.env.ETHERSCAN_APIKEY
+      kovan: process.env.ETHERSCAN_APIKEY,
+      goerli: process.env.ETHERSCAN_APIKEY
     }
   }
 };
